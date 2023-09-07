@@ -10,9 +10,18 @@
 		DE8F49822AA99EFB0028C055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49812AA99EFB0028C055 /* AppDelegate.swift */; };
 		DE8F49842AA99EFB0028C055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49832AA99EFB0028C055 /* SceneDelegate.swift */; };
 		DE8F49862AA99EFB0028C055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49852AA99EFB0028C055 /* ViewController.swift */; };
-		DE8F49892AA99EFB0028C055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F49872AA99EFB0028C055 /* Main.storyboard */; };
 		DE8F498B2AA99EFD0028C055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8F498A2AA99EFD0028C055 /* Assets.xcassets */; };
 		DE8F498E2AA99EFD0028C055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8F498C2AA99EFD0028C055 /* LaunchScreen.storyboard */; };
+		DE8F49972AA99F250028C055 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DE8F49962AA99F250028C055 /* SnapKit */; };
+		DE8F499A2AA99F340028C055 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DE8F49992AA99F340028C055 /* Alamofire */; };
+		DE8F499D2AA99F930028C055 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DE8F499C2AA99F930028C055 /* Realm */; };
+		DE8F499F2AA99F930028C055 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DE8F499E2AA99F930028C055 /* RealmSwift */; };
+		DE8F49A82AA9A3E40028C055 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49A72AA9A3E40028C055 /* BaseView.swift */; };
+		DE8F49AD2AA9A50B0028C055 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49AC2AA9A50B0028C055 /* BaseViewController.swift */; };
+		DE8F49AF2AA9A5810028C055 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49AE2AA9A5810028C055 /* UIViewController+Extension.swift */; };
+		DE8F49B12AA9A5980028C055 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49B02AA9A5980028C055 /* UIView+Extension.swift */; };
+		DE8F49B42AA9A6940028C055 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DE8F49B32AA9A6940028C055 /* .gitignore */; };
+		DE8F49B62AA9A6AD0028C055 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49B52AA9A6AD0028C055 /* APIKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +29,15 @@
 		DE8F49812AA99EFB0028C055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8F49832AA99EFB0028C055 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DE8F49852AA99EFB0028C055 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DE8F49882AA99EFB0028C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE8F498A2AA99EFD0028C055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE8F498D2AA99EFD0028C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE8F498F2AA99EFD0028C055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8F49A72AA9A3E40028C055 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		DE8F49AC2AA9A50B0028C055 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DE8F49AE2AA9A5810028C055 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		DE8F49B02AA9A5980028C055 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		DE8F49B32AA9A6940028C055 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DE8F49B52AA9A6AD0028C055 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +45,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8F499F2AA99F930028C055 /* RealmSwift in Frameworks */,
+				DE8F499D2AA99F930028C055 /* Realm in Frameworks */,
+				DE8F49972AA99F250028C055 /* SnapKit in Frameworks */,
+				DE8F499A2AA99F340028C055 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +74,76 @@
 		DE8F49802AA99EFB0028C055 /* SeSAC_ShoppingBag */ = {
 			isa = PBXGroup;
 			children = (
-				DE8F49812AA99EFB0028C055 /* AppDelegate.swift */,
-				DE8F49832AA99EFB0028C055 /* SceneDelegate.swift */,
+				DE8F49A52AA9A31A0028C055 /* Asset */,
+				DE8F49A42AA9A1870028C055 /* App */,
+				DE8F49A32AA9A1820028C055 /* Helper */,
+				DE8F49A22AA9A17C0028C055 /* Model */,
+				DE8F49A12AA9A1660028C055 /* Extension */,
+				DE8F49A02AA9A1600028C055 /* Scene */,
 				DE8F49852AA99EFB0028C055 /* ViewController.swift */,
-				DE8F49872AA99EFB0028C055 /* Main.storyboard */,
-				DE8F498A2AA99EFD0028C055 /* Assets.xcassets */,
-				DE8F498C2AA99EFD0028C055 /* LaunchScreen.storyboard */,
 				DE8F498F2AA99EFD0028C055 /* Info.plist */,
+				DE8F49B32AA9A6940028C055 /* .gitignore */,
 			);
 			path = SeSAC_ShoppingBag;
+			sourceTree = "<group>";
+		};
+		DE8F49A02AA9A1600028C055 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				DE8F49A62AA9A3C70028C055 /* Base */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		DE8F49A12AA9A1660028C055 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DE8F49AE2AA9A5810028C055 /* UIViewController+Extension.swift */,
+				DE8F49B02AA9A5980028C055 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DE8F49A22AA9A17C0028C055 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE8F49A32AA9A1820028C055 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DE8F49B52AA9A6AD0028C055 /* APIKeys.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		DE8F49A42AA9A1870028C055 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DE8F49812AA99EFB0028C055 /* AppDelegate.swift */,
+				DE8F49832AA99EFB0028C055 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DE8F49A52AA9A31A0028C055 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				DE8F498A2AA99EFD0028C055 /* Assets.xcassets */,
+				DE8F498C2AA99EFD0028C055 /* LaunchScreen.storyboard */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		DE8F49A62AA9A3C70028C055 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DE8F49A72AA9A3E40028C055 /* BaseView.swift */,
+				DE8F49AC2AA9A50B0028C055 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +162,12 @@
 			dependencies = (
 			);
 			name = SeSAC_ShoppingBag;
+			packageProductDependencies = (
+				DE8F49962AA99F250028C055 /* SnapKit */,
+				DE8F49992AA99F340028C055 /* Alamofire */,
+				DE8F499C2AA99F930028C055 /* Realm */,
+				DE8F499E2AA99F930028C055 /* RealmSwift */,
+			);
 			productName = SeSAC_ShoppingBag;
 			productReference = DE8F497E2AA99EFB0028C055 /* SeSAC_ShoppingBag.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +196,11 @@
 				Base,
 			);
 			mainGroup = DE8F49752AA99EFB0028C055;
+			packageReferences = (
+				DE8F49952AA99F250028C055 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				DE8F49982AA99F340028C055 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DE8F499B2AA99F930028C055 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = DE8F497F2AA99EFB0028C055 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,8 +216,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8F498E2AA99EFD0028C055 /* LaunchScreen.storyboard in Resources */,
+				DE8F49B42AA9A6940028C055 /* .gitignore in Resources */,
 				DE8F498B2AA99EFD0028C055 /* Assets.xcassets in Resources */,
-				DE8F49892AA99EFB0028C055 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +228,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8F49AD2AA9A50B0028C055 /* BaseViewController.swift in Sources */,
+				DE8F49B12AA9A5980028C055 /* UIView+Extension.swift in Sources */,
 				DE8F49862AA99EFB0028C055 /* ViewController.swift in Sources */,
+				DE8F49AF2AA9A5810028C055 /* UIViewController+Extension.swift in Sources */,
 				DE8F49822AA99EFB0028C055 /* AppDelegate.swift in Sources */,
 				DE8F49842AA99EFB0028C055 /* SceneDelegate.swift in Sources */,
+				DE8F49B62AA9A6AD0028C055 /* APIKeys.swift in Sources */,
+				DE8F49A82AA9A3E40028C055 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DE8F49872AA99EFB0028C055 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE8F49882AA99EFB0028C055 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DE8F498C2AA99EFD0028C055 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,11 +377,12 @@
 				DEVELOPMENT_TEAM = AYG8MBJF93;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC_ShoppingBag/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +390,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ILWAT-com.github.SeSAC-ShoppingBag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,11 +409,12 @@
 				DEVELOPMENT_TEAM = AYG8MBJF93;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC_ShoppingBag/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +422,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ILWAT-com.github.SeSAC-ShoppingBag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -358,6 +453,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE8F49952AA99F250028C055 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		DE8F49982AA99F340028C055 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.8.0;
+			};
+		};
+		DE8F499B2AA99F930028C055 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.42.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE8F49962AA99F250028C055 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE8F49952AA99F250028C055 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		DE8F49992AA99F340028C055 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE8F49982AA99F340028C055 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		DE8F499C2AA99F930028C055 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE8F499B2AA99F930028C055 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		DE8F499E2AA99F930028C055 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE8F499B2AA99F930028C055 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE8F49762AA99EFB0028C055 /* Project object */;
 }
