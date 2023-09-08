@@ -12,6 +12,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setNavigation()
     }
     
     ///네비게이션 관련 프로퍼티 또는 메서드를 설정하고 수행한다.
