@@ -22,6 +22,11 @@
 		DE8F49B12AA9A5980028C055 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49B02AA9A5980028C055 /* UIView+Extension.swift */; };
 		DE8F49B42AA9A6940028C055 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DE8F49B32AA9A6940028C055 /* .gitignore */; };
 		DE8F49B62AA9A6AD0028C055 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49B52AA9A6AD0028C055 /* APIKeys.swift */; };
+		DE8F49BA2AA9C1410028C055 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49B92AA9C1410028C055 /* SearchViewController.swift */; };
+		DE8F49BC2AA9C1580028C055 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49BB2AA9C1580028C055 /* SearchView.swift */; };
+		DE8F49BE2AA9C2640028C055 /* BaseCollectionSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49BD2AA9C2640028C055 /* BaseCollectionSearchView.swift */; };
+		DE8F49C02AA9F6560028C055 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49BF2AA9F6560028C055 /* WishListViewController.swift */; };
+		DEA943352AAB2EC6002AB731 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA943342AAB2EC6002AB731 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		DE8F49B02AA9A5980028C055 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DE8F49B32AA9A6940028C055 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DE8F49B52AA9A6AD0028C055 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		DE8F49B92AA9C1410028C055 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		DE8F49BB2AA9C1580028C055 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		DE8F49BD2AA9C2640028C055 /* BaseCollectionSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionSearchView.swift; sourceTree = "<group>"; };
+		DE8F49BF2AA9F6560028C055 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		DEA943342AAB2EC6002AB731 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,8 @@
 		DE8F49A02AA9A1600028C055 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				DE8F49B82AA9ADE80028C055 /* WishList */,
+				DE8F49B72AA9ADD70028C055 /* Search */,
 				DE8F49A62AA9A3C70028C055 /* Base */,
 			);
 			path = Scene;
@@ -115,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8F49B52AA9A6AD0028C055 /* APIKeys.swift */,
+				DEA943342AAB2EC6002AB731 /* APIManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -142,8 +155,26 @@
 			children = (
 				DE8F49A72AA9A3E40028C055 /* BaseView.swift */,
 				DE8F49AC2AA9A50B0028C055 /* BaseViewController.swift */,
+				DE8F49BD2AA9C2640028C055 /* BaseCollectionSearchView.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		DE8F49B72AA9ADD70028C055 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DE8F49B92AA9C1410028C055 /* SearchViewController.swift */,
+				DE8F49BB2AA9C1580028C055 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DE8F49B82AA9ADE80028C055 /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+				DE8F49BF2AA9F6560028C055 /* WishListViewController.swift */,
+			);
+			path = WishList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,11 +260,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8F49AD2AA9A50B0028C055 /* BaseViewController.swift in Sources */,
+				DE8F49C02AA9F6560028C055 /* WishListViewController.swift in Sources */,
+				DE8F49BE2AA9C2640028C055 /* BaseCollectionSearchView.swift in Sources */,
 				DE8F49B12AA9A5980028C055 /* UIView+Extension.swift in Sources */,
 				DE8F49862AA99EFB0028C055 /* ViewController.swift in Sources */,
+				DE8F49BA2AA9C1410028C055 /* SearchViewController.swift in Sources */,
 				DE8F49AF2AA9A5810028C055 /* UIViewController+Extension.swift in Sources */,
 				DE8F49822AA99EFB0028C055 /* AppDelegate.swift in Sources */,
 				DE8F49842AA99EFB0028C055 /* SceneDelegate.swift in Sources */,
+				DE8F49BC2AA9C1580028C055 /* SearchView.swift in Sources */,
+				DEA943352AAB2EC6002AB731 /* APIManager.swift in Sources */,
 				DE8F49B62AA9A6AD0028C055 /* APIKeys.swift in Sources */,
 				DE8F49A82AA9A3E40028C055 /* BaseView.swift in Sources */,
 			);
