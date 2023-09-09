@@ -27,6 +27,8 @@ class BaseCollectionSearchView: UIView{
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        view.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
         view.backgroundColor = .clear
         
         return view
