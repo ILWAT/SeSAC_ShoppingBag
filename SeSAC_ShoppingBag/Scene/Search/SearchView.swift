@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 final class SearchView: BaseCollectionSearchView{
     //MARK: - Properties
@@ -37,7 +36,7 @@ final class SearchView: BaseCollectionSearchView{
         return button
     }()
     
-    private lazy var orderAscButton = { [self] in
+    private lazy var orderAscButton = {
         let button = UIButton()
         button.setTitle("가격 낮은순", for: .normal)
         setButtonConfig(button)
@@ -87,7 +86,7 @@ final class SearchView: BaseCollectionSearchView{
     }
     
     //MARK: - Helper
-    func setButtonConfig(_ button: UIButton){
+    private func setButtonConfig(_ button: UIButton){
         if #available(iOS 15.0, *){
             var config = UIButton.Configuration.filled()
             config.baseBackgroundColor = .clear
@@ -103,7 +102,7 @@ final class SearchView: BaseCollectionSearchView{
             button.backgroundColor = .clear
             button.setTitleColor(.systemGray, for: .normal)
             button.setTitleColor(.systemGray3, for: .highlighted)
-            button.setTitle(" \(button.currentTitle) ", for: .normal)
+            button.setTitle(" \(button.currentTitle ?? "") ", for: .normal)
         }
     
         button.layer.cornerRadius = 10

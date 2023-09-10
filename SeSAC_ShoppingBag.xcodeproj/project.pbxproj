@@ -27,6 +27,12 @@
 		DE8F49BE2AA9C2640028C055 /* BaseCollectionSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49BD2AA9C2640028C055 /* BaseCollectionSearchView.swift */; };
 		DE8F49C02AA9F6560028C055 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49BF2AA9F6560028C055 /* WishListViewController.swift */; };
 		DEA943352AAB2EC6002AB731 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA943342AAB2EC6002AB731 /* APIManager.swift */; };
+		DEA943382AAB5388002AB731 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA943372AAB5388002AB731 /* SearchCollectionViewCell.swift */; };
+		DEA9433A2AAB5F0A002AB731 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA943392AAB5F0A002AB731 /* IdentifierProtocol.swift */; };
+		DEC174D62AACB317006C62F9 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC174D52AACB317006C62F9 /* EndPoint.swift */; };
+		DEC174D82AACB38D006C62F9 /* Extension+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC174D72AACB38D006C62F9 /* Extension+URL.swift */; };
+		DEC174DD2AADFAB9006C62F9 /* SearchShoppingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC174DC2AADFAB9006C62F9 /* SearchShoppingModel.swift */; };
+		DEC174E02AADFC04006C62F9 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = DEC174DF2AADFC04006C62F9 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,11 @@
 		DE8F49BD2AA9C2640028C055 /* BaseCollectionSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionSearchView.swift; sourceTree = "<group>"; };
 		DE8F49BF2AA9F6560028C055 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		DEA943342AAB2EC6002AB731 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		DEA943372AAB5388002AB731 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		DEA943392AAB5F0A002AB731 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
+		DEC174D52AACB317006C62F9 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		DEC174D72AACB38D006C62F9 /* Extension+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URL.swift"; sourceTree = "<group>"; };
+		DEC174DC2AADFAB9006C62F9 /* SearchShoppingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchShoppingModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +69,7 @@
 				DE8F499F2AA99F930028C055 /* RealmSwift in Frameworks */,
 				DE8F499D2AA99F930028C055 /* Realm in Frameworks */,
 				DE8F49972AA99F250028C055 /* SnapKit in Frameworks */,
+				DEC174E02AADFC04006C62F9 /* Toast in Frameworks */,
 				DE8F499A2AA99F340028C055 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +124,7 @@
 			children = (
 				DE8F49AE2AA9A5810028C055 /* UIViewController+Extension.swift */,
 				DE8F49B02AA9A5980028C055 /* UIView+Extension.swift */,
+				DEA943392AAB5F0A002AB731 /* IdentifierProtocol.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -119,6 +132,7 @@
 		DE8F49A22AA9A17C0028C055 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DEC174DC2AADFAB9006C62F9 /* SearchShoppingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,7 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				DE8F49B52AA9A6AD0028C055 /* APIKeys.swift */,
+				DEC174D52AACB317006C62F9 /* EndPoint.swift */,
 				DEA943342AAB2EC6002AB731 /* APIManager.swift */,
+				DEC174D72AACB38D006C62F9 /* Extension+URL.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -163,6 +179,7 @@
 		DE8F49B72AA9ADD70028C055 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				DEA943362AAB536D002AB731 /* Cell */,
 				DE8F49B92AA9C1410028C055 /* SearchViewController.swift */,
 				DE8F49BB2AA9C1580028C055 /* SearchView.swift */,
 			);
@@ -175,6 +192,14 @@
 				DE8F49BF2AA9F6560028C055 /* WishListViewController.swift */,
 			);
 			path = WishList;
+			sourceTree = "<group>";
+		};
+		DEA943362AAB536D002AB731 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DEA943372AAB5388002AB731 /* SearchCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +223,7 @@
 				DE8F49992AA99F340028C055 /* Alamofire */,
 				DE8F499C2AA99F930028C055 /* Realm */,
 				DE8F499E2AA99F930028C055 /* RealmSwift */,
+				DEC174DF2AADFC04006C62F9 /* Toast */,
 			);
 			productName = SeSAC_ShoppingBag;
 			productReference = DE8F497E2AA99EFB0028C055 /* SeSAC_ShoppingBag.app */;
@@ -231,6 +257,7 @@
 				DE8F49952AA99F250028C055 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				DE8F49982AA99F340028C055 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				DE8F499B2AA99F930028C055 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				DEC174DE2AADFC04006C62F9 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = DE8F497F2AA99EFB0028C055 /* Products */;
 			projectDirPath = "";
@@ -266,11 +293,16 @@
 				DE8F49862AA99EFB0028C055 /* ViewController.swift in Sources */,
 				DE8F49BA2AA9C1410028C055 /* SearchViewController.swift in Sources */,
 				DE8F49AF2AA9A5810028C055 /* UIViewController+Extension.swift in Sources */,
+				DEC174D82AACB38D006C62F9 /* Extension+URL.swift in Sources */,
 				DE8F49822AA99EFB0028C055 /* AppDelegate.swift in Sources */,
 				DE8F49842AA99EFB0028C055 /* SceneDelegate.swift in Sources */,
 				DE8F49BC2AA9C1580028C055 /* SearchView.swift in Sources */,
+				DEC174D62AACB317006C62F9 /* EndPoint.swift in Sources */,
 				DEA943352AAB2EC6002AB731 /* APIManager.swift in Sources */,
 				DE8F49B62AA9A6AD0028C055 /* APIKeys.swift in Sources */,
+				DEA943382AAB5388002AB731 /* SearchCollectionViewCell.swift in Sources */,
+				DEC174DD2AADFAB9006C62F9 /* SearchShoppingModel.swift in Sources */,
+				DEA9433A2AAB5F0A002AB731 /* IdentifierProtocol.swift in Sources */,
 				DE8F49A82AA9A3E40028C055 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +547,14 @@
 				version = 10.42.1;
 			};
 		};
+		DEC174DE2AADFC04006C62F9 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -537,6 +577,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE8F499B2AA99F930028C055 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		DEC174DF2AADFC04006C62F9 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC174DE2AADFC04006C62F9 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
