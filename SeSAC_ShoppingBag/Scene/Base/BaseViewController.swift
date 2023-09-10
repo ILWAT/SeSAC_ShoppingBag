@@ -11,7 +11,7 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configure()
         setNavigation()
     }
     ///delegate 또는 addTaget등을 수행한다.
