@@ -14,8 +14,8 @@
             filePath = "SeSAC_ShoppingBag/Scene/Search/SearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "tappedLikeButton(_:)"
             landmarkType = "7">
          </BreakpointContent>

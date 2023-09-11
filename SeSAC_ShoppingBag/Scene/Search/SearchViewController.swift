@@ -28,6 +28,10 @@ final class SearchViewController: BaseViewController {
         view = mainView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        mainView.collectionView.reloadData()
+    }
+    
     
     //MARK: - setUI
     override func configure() {
@@ -189,7 +193,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let nextVC = DetailViewController()
         let item = searchResultItems[indexPath.row]
         nextVC.data = item
-        nextVC.realmData = RealmManager.shared.getDataInRealm(productID: item.productID )
+        nextVC.realmData = RealmManager.shared.getDataInRealm(productID: item.productID)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
@@ -203,6 +207,7 @@ extension SearchViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.view.makeToastActivity(.center) //첫 로딩은 로딩 Toast를 사용하여 로딩중임을 보여주도록 한다.
+        searchBar.resignFirstResponder()
         
         guard let text = searchBar.text else {return}
         clearData()

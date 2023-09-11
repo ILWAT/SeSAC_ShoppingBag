@@ -10,6 +10,7 @@ import Foundation
 
 enum EndPoint{
     case searchShopping
+    case mobileShoppingWebLink
 }
 
 extension EndPoint{
@@ -18,6 +19,8 @@ extension EndPoint{
             switch self {
             case .searchShopping:
                 return URL.naverSearchShoppingURL+"/search/shop.json"
+            case .mobileShoppingWebLink:
+                return URL.mobilString
             }
         }
     }

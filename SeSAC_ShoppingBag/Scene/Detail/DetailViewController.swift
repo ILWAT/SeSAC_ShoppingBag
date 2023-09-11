@@ -18,7 +18,7 @@ class DetailViewController: BaseViewController, WKUIDelegate{
     
     var realmData: SearchShoppingRealmModel? = nil
     
-    var isLiked: Bool = false{
+    lazy var isLiked: Bool = realmData?.like ?? false{
         didSet{
             changeLikeButtonImage()
         }
@@ -34,7 +34,9 @@ class DetailViewController: BaseViewController, WKUIDelegate{
     //MARK: - setUI
     override func configure() {
         //WebView 설정
-        guard let url = URL(string: data.link) else {
+        let mobilString = EndPoint.mobileShoppingWebLink.getURL+"/\(data.productID)"
+        
+        guard let url = URL(string:mobilString) else {
             makeToast(toastType: .networkError)
             return
         }
@@ -43,10 +45,11 @@ class DetailViewController: BaseViewController, WKUIDelegate{
         
         //LikeButton 설정
         isLiked = realmData?.like ?? false
+        changeLikeButtonImage()
     }
     
     override func setNavigation() {
-        self.title = ""
+        self.title = realmData?.title
         self.navigationItem.setRightBarButton(UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(tappedLikeButton)), animated: true)
     }
     
