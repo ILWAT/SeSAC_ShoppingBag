@@ -11,7 +11,7 @@ import SnapKit
 class BaseCollectionSearchView: UIView{
     lazy var searchBar = {
         let bar = UISearchBar()
-        bar.backgroundColor = backgroundColor
+        bar.backgroundColor = .clear
         bar.tintColor = .systemGray
         return bar
     }()
@@ -52,5 +52,10 @@ class BaseCollectionSearchView: UIView{
     ///AutoLayout을 적용한다.
     func setConstraints() { }
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        searchBar.resignFirstResponder()
+    }
     
 }

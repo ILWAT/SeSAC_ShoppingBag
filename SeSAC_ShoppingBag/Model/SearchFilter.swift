@@ -7,13 +7,11 @@
 
 import Foundation
 
-//[mainView.accuracyButton, mainView.dateButton, mainView.orderAscButton, mainView.orderDesButton]
-
-@frozen enum SearchFilter: String{
-    case accuracy = "sim"
-    case date = "date"
-    case ascOrder = "asc"
-    case dscOrder = "dsc"
+@frozen enum SearchFilter: Int{
+    case accuracy = 0
+    case date
+    case ascOrder
+    case dscOrder
 }
 
 extension SearchFilter{
@@ -21,13 +19,13 @@ extension SearchFilter{
         get{
             switch self {
             case .accuracy:
-                return rawValue
+                return "sim"
             case .date:
-                return rawValue
+                return "date"
             case .ascOrder:
-                return rawValue
+                return "asc"
             case .dscOrder:
-                return rawValue
+                return "dsc"
             }
         }
     }
