@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class SearchCollectionViewCell: UICollectionViewCell{
     //MARK: - Properties
@@ -39,6 +40,7 @@ class SearchCollectionViewCell: UICollectionViewCell{
         view.clipsToBounds = true
         view.contentMode = .scaleAspectFill //화면을 꽉채우면서 비율은 유지하게 한다.
         view.layer.cornerRadius = 10
+        view.isUserInteractionEnabled = true
         return view
     }()
     
@@ -79,8 +81,8 @@ class SearchCollectionViewCell: UICollectionViewCell{
         [brandLabel, productLabel, priceLabel].forEach { label in
             textStackView.addArrangedSubview(label)
         }
-        productImageView.addSubview(likeButton)
-        contentView.addSubViews([textStackView, productImageView])
+        contentView.addSubViews([textStackView, productImageView, likeButton])
+        
     }
     
     func setConstraints(){
@@ -90,8 +92,8 @@ class SearchCollectionViewCell: UICollectionViewCell{
             make.height.equalTo(productImageView.snp.width)
         }
         likeButton.snp.makeConstraints { make in
-            make.bottom.trailing.equalToSuperview().inset(10)
-            make.width.equalToSuperview().multipliedBy(0.15)
+            make.bottom.trailing.equalTo(productImageView).inset(10)
+            make.width.equalTo(productImageView).multipliedBy(0.2)
             make.height.equalTo(likeButton.snp.width)
         }
         textStackView.snp.makeConstraints { make in
@@ -102,32 +104,26 @@ class SearchCollectionViewCell: UICollectionViewCell{
     }
     
     func setDisplayData(_ data: Item){
-        productLabel.text = data.title
+        productLabel.text = data.title.removeSearchKeywordPoint()
         brandLabel.text = "[\(data.mallName)]"
         priceLabel.text = data.lprice
         
-        DispatchQueue.global().async {
-            guard let imageURL = URL(string: data.image) else {return}
-            do{
-                let imageData = try Data(contentsOf: imageURL)
-                DispatchQueue.main.async {
-                    self.productImageView.image = UIImage(data: imageData)
-                }
-            } catch {
-                print(error)
-            }
-        }
+        guard let imageURL = URL(string: data.image) else {return}
+        productImageView.kf.setImage(with: imageURL)
+        
+//        DispatchQueue.global().async {
+//            guard let imageURL = URL(string: data.image) else {return}
+//            do{
+//                let imageData = try Data(contentsOf: imageURL)
+//                DispatchQueue.main.async {
+//                    self.productImageView.image = UIImage(data: imageData)
+//                }
+//            } catch {
+//                print(error)
+//            }
+//        }
         
        
     }
-    
-    //MARK: - Action
-    
-    @objc func tappedLikeButton(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        print("tapped")
-    }
-    
-    
     
 }

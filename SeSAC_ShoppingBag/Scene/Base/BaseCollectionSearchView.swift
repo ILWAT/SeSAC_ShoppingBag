@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class BaseCollectionSearchView: UIView{
     lazy var searchBar = {

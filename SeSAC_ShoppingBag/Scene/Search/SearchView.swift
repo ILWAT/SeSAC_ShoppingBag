@@ -15,41 +15,41 @@ final class SearchView: BaseCollectionSearchView{
         return view
     }()
     
-    private lazy var accuracyButton = {
+    lazy var accuracyButton = {
         let button = UIButton()
         button.setTitle("정확도", for: .normal)
         setButtonConfig(button)
         return button
     }()
     
-    private lazy var dateButton = {
+    lazy var dateButton = {
         let button = UIButton()
         button.setTitle("날짜순", for: .normal)
         setButtonConfig(button)
         return button
     }()
     
-    private lazy var orderDesButton = {
+    lazy var orderDscButton = {
         let button = UIButton()
         button.setTitle("가격 높은순", for: .normal)
         setButtonConfig(button)
         return button
     }()
     
-    private lazy var orderAscButton = {
+    lazy var orderAscButton = {
         let button = UIButton()
         button.setTitle("가격 낮은순", for: .normal)
         setButtonConfig(button)
         return button
     }()
     
-    
+    //시간이 되면 stackView 생성후 buttonUI 간결하게 변경하자.
     
     //MARK: - setUI
     override func configure() {
         super.configure()
         addSubViews([filterView])
-        filterView.addSubViews([accuracyButton, dateButton, orderDesButton, orderAscButton])
+        filterView.addSubViews([accuracyButton, dateButton, orderDscButton, orderAscButton])
     }
     
     override func setConstraints() {
@@ -73,7 +73,7 @@ final class SearchView: BaseCollectionSearchView{
             make.leading.equalTo(dateButton.snp.trailing).offset(10)
             make.verticalEdges.equalToSuperview().inset(10)
         }
-        orderDesButton.snp.makeConstraints { make in
+        orderDscButton.snp.makeConstraints { make in
             make.leading.equalTo(orderAscButton.snp.trailing).offset(10)
             make.verticalEdges.equalToSuperview().inset(10)
             make.trailing.lessThanOrEqualToSuperview().inset(10)
@@ -104,7 +104,6 @@ final class SearchView: BaseCollectionSearchView{
             button.setTitleColor(.systemGray3, for: .highlighted)
             button.setTitle(" \(button.currentTitle ?? "") ", for: .normal)
         }
-    
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.systemGray.cgColor
