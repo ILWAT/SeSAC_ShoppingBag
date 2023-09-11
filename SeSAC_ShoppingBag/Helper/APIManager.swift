@@ -16,23 +16,27 @@ final class APIManager {
     
     private init() {}
     
-    func requestSearchShopping(_ searchKeyword: String, page: Int, completionHandler: @escaping (SearchShoppingModel?)-> Void){
+    func requestSearchShopping(_ searchKeyword: String, page: Int, completionHandler: @escaping (SearchShoppingModel?, Bool)-> Void){
+        
         guard let keyword = searchKeyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
         
-        guard let url = URL(string: EndPoint.searchShopping.getURL+"?query=\(keyword)&display=30&start\(page)") else {
+        guard page <= 1000 else {
+            completionHandler(nil, true)
+            return
+        }
+        
+        guard let url = URL(string: EndPoint.searchShopping.getURL+"?query=\(keyword)&display=30&start=\(page)") else {
             print("URL error")
             return
-            
         }
-
         AF.request(url, headers: header).validate().responseDecodable(of: SearchShoppingModel.self) { response in
             switch response.result {
             case .success(let value):
                 print(value)
-                completionHandler(value)
+                completionHandler(value, false)
             case .failure(let error):
                 print(error)
-                completionHandler(nil)
+                completionHandler(nil, false)
             }
         }
         
