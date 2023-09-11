@@ -23,6 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let searchNav = UINavigationController(rootViewController: SearchViewController())
         let wishNav = UINavigationController(rootViewController: WishListViewController())
         tabBarController.setViewControllers([searchNav, wishNav], animated: true)
+        
+        tabBarController.tabBar.items?[0].image = UIImage(systemName: "magnifyingglass")
+        tabBarController.tabBar.items?[0].title = "검색"
+        tabBarController.tabBar.items?[1].title = "좋아요"
+        tabBarController.tabBar.items?[1].image = UIImage(systemName: "heart")
+        
 
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()

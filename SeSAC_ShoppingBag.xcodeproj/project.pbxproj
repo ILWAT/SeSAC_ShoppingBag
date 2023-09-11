@@ -33,6 +33,10 @@
 		DEC174D82AACB38D006C62F9 /* Extension+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC174D72AACB38D006C62F9 /* Extension+URL.swift */; };
 		DEC174DD2AADFAB9006C62F9 /* SearchShoppingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC174DC2AADFAB9006C62F9 /* SearchShoppingModel.swift */; };
 		DEC174E02AADFC04006C62F9 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = DEC174DF2AADFC04006C62F9 /* Toast */; };
+		DEC174E22AAE447B006C62F9 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC174E12AAE447B006C62F9 /* String+Extension.swift */; };
+		DEC174E42AAE5820006C62F9 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC174E32AAE5820006C62F9 /* WishListView.swift */; };
+		DEC174E72AAE5D50006C62F9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DEC174E62AAE5D50006C62F9 /* Kingfisher */; };
+		DEC174E92AAE78DB006C62F9 /* SearchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC174E82AAE78DB006C62F9 /* SearchFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,9 @@
 		DEC174D52AACB317006C62F9 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		DEC174D72AACB38D006C62F9 /* Extension+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URL.swift"; sourceTree = "<group>"; };
 		DEC174DC2AADFAB9006C62F9 /* SearchShoppingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchShoppingModel.swift; sourceTree = "<group>"; };
+		DEC174E12AAE447B006C62F9 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		DEC174E32AAE5820006C62F9 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
+		DEC174E82AAE78DB006C62F9 /* SearchFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC174E72AAE5D50006C62F9 /* Kingfisher in Frameworks */,
 				DE8F499F2AA99F930028C055 /* RealmSwift in Frameworks */,
 				DE8F499D2AA99F930028C055 /* Realm in Frameworks */,
 				DE8F49972AA99F250028C055 /* SnapKit in Frameworks */,
@@ -125,6 +133,7 @@
 				DE8F49AE2AA9A5810028C055 /* UIViewController+Extension.swift */,
 				DE8F49B02AA9A5980028C055 /* UIView+Extension.swift */,
 				DEA943392AAB5F0A002AB731 /* IdentifierProtocol.swift */,
+				DEC174E12AAE447B006C62F9 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -133,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC174DC2AADFAB9006C62F9 /* SearchShoppingModel.swift */,
+				DEC174E82AAE78DB006C62F9 /* SearchFilter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8F49BF2AA9F6560028C055 /* WishListViewController.swift */,
+				DEC174E32AAE5820006C62F9 /* WishListView.swift */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -224,6 +235,7 @@
 				DE8F499C2AA99F930028C055 /* Realm */,
 				DE8F499E2AA99F930028C055 /* RealmSwift */,
 				DEC174DF2AADFC04006C62F9 /* Toast */,
+				DEC174E62AAE5D50006C62F9 /* Kingfisher */,
 			);
 			productName = SeSAC_ShoppingBag;
 			productReference = DE8F497E2AA99EFB0028C055 /* SeSAC_ShoppingBag.app */;
@@ -258,6 +270,7 @@
 				DE8F49982AA99F340028C055 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				DE8F499B2AA99F930028C055 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				DEC174DE2AADFC04006C62F9 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				DEC174E52AAE5D50006C62F9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = DE8F497F2AA99EFB0028C055 /* Products */;
 			projectDirPath = "";
@@ -289,6 +302,7 @@
 				DE8F49AD2AA9A50B0028C055 /* BaseViewController.swift in Sources */,
 				DE8F49C02AA9F6560028C055 /* WishListViewController.swift in Sources */,
 				DE8F49BE2AA9C2640028C055 /* BaseCollectionSearchView.swift in Sources */,
+				DEC174E22AAE447B006C62F9 /* String+Extension.swift in Sources */,
 				DE8F49B12AA9A5980028C055 /* UIView+Extension.swift in Sources */,
 				DE8F49862AA99EFB0028C055 /* ViewController.swift in Sources */,
 				DE8F49BA2AA9C1410028C055 /* SearchViewController.swift in Sources */,
@@ -300,9 +314,11 @@
 				DEC174D62AACB317006C62F9 /* EndPoint.swift in Sources */,
 				DEA943352AAB2EC6002AB731 /* APIManager.swift in Sources */,
 				DE8F49B62AA9A6AD0028C055 /* APIKeys.swift in Sources */,
+				DEC174E42AAE5820006C62F9 /* WishListView.swift in Sources */,
 				DEA943382AAB5388002AB731 /* SearchCollectionViewCell.swift in Sources */,
 				DEC174DD2AADFAB9006C62F9 /* SearchShoppingModel.swift in Sources */,
 				DEA9433A2AAB5F0A002AB731 /* IdentifierProtocol.swift in Sources */,
+				DEC174E92AAE78DB006C62F9 /* SearchFilter.swift in Sources */,
 				DE8F49A82AA9A3E40028C055 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,6 +571,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		DEC174E52AAE5D50006C62F9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 7.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -582,6 +606,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DEC174DE2AADFC04006C62F9 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		DEC174E62AAE5D50006C62F9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC174E52AAE5D50006C62F9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
