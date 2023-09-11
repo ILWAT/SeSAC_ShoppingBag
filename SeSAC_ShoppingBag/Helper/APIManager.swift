@@ -16,7 +16,7 @@ final class APIManager {
     
     private init() {}
     
-    func requestSearchShopping(_ searchKeyword: String, page: Int, completionHandler: @escaping (SearchShoppingModel?, Bool)-> Void){
+    func requestSearchShopping(_ searchKeyword: String, page: Int, filter: SearchFilter? = nil,  completionHandler: @escaping (SearchShoppingModel?, Bool)-> Void){
         
         guard let keyword = searchKeyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
         
@@ -25,7 +25,7 @@ final class APIManager {
             return
         }
         
-        guard let url = URL(string: EndPoint.searchShopping.getURL+"?query=\(keyword)&display=30&start=\(page)") else {
+        guard let url = URL(string: EndPoint.searchShopping.getURL+"?query=\(keyword)&display=30&start=\(page)&sort=\(filter?.getFilterQuery ?? "sim")") else {
             print("URL error")
             return
         }
