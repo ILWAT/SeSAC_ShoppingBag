@@ -111,6 +111,8 @@ class SearchCollectionViewCell: UICollectionViewCell{
         guard let imageURL = URL(string: data.image) else {return}
         productImageView.kf.setImage(with: imageURL)
         
+        
+        
 //        DispatchQueue.global().async {
 //            guard let imageURL = URL(string: data.image) else {return}
 //            do{
@@ -126,4 +128,12 @@ class SearchCollectionViewCell: UICollectionViewCell{
        
     }
     
+    func setDisplayData(_ data: SearchShoppingRealmModel){
+        productLabel.text = data.title.removeSearchKeywordPoint()
+        brandLabel.text = "[\(data.mallName)]"
+        priceLabel.text = data.lprice
+        
+        guard let imageURL = URL(string: data.image) else {return}
+        productImageView.kf.setImage(with: imageURL)
+    }
 }
