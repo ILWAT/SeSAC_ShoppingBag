@@ -25,9 +25,10 @@ class SearchShoppingRealmModel: Object{
     @Persisted var category3: String
     @Persisted var category4: String
     @Persisted var like: Bool
+    @Persisted var likedDate: Date
     
     
-    convenience init(title: String, link: String, image: String, lprice: String, hprice: String, mallName: String, productID: String, productType: String, brand: String, maker: String, category1: String, category2: String, category3: String, category4: String, like: Bool = true) {
+    convenience init(title: String, link: String, image: String, lprice: String, hprice: String, mallName: String, productID: String, productType: String, brand: String, maker: String, category1: String, category2: String, category3: String, category4: String, like: Bool = true, likedDate: Date = Date()) {
         self.init()
         self.title = title
         self.link = link
@@ -44,5 +45,6 @@ class SearchShoppingRealmModel: Object{
         self.category3 = category3
         self.category4 = category4
         self.like = like
+        self.likedDate = likedDate
     }
 }
