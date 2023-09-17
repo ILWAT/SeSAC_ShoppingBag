@@ -54,12 +54,13 @@ final class SearchViewController: BaseViewController {
     @objc func tappedLikeButton(_ sender: UIButton){
         let originData = sender.isSelected
         let selectedItem = searchResultItems[sender.tag]
-        if realm.checkDataInRealm(productID: selectedItem.productID) {
+        if realm.checkDataInRealm(productID: selectedItem.productID) { //데이터베이스에 해당 상품이 있다면 -> 좋아요를 한 상품이라면
             guard let productID = realm.getDataInRealm(productID: selectedItem.productID) else {
                 print("데이터 로드 실패")
                 makeToast(toastType: .failureSaveDB)
                 return
             }
+            //버튼의 상태를 변경하기 위해 데이터베이스의 좋아요를 변경한 후 상품을 데이터베이스에서 삭제한다.
             sender.isSelected = realm.changeShoppingRealmLikeData(data: productID, isLiked: sender.isSelected)
             
             if realm.removeShoppingRealmData(data: productID){
@@ -67,7 +68,8 @@ final class SearchViewController: BaseViewController {
             } else {
                 makeToast(toastType: .failureSaveDB)
             }
-        } else {
+        } else { //데이터베이스에 해당 상품이 없다면 -> 좋아요를 하지 않은 상품이라면
+            //데이터베이스에 해당 상품을 저장한다.
             sender.isSelected = realm.insertShoppingRealmData(data: selectedItem)
         }
         
@@ -106,7 +108,7 @@ final class SearchViewController: BaseViewController {
             }
             else { item.isSelected = false }
             
-            //버튼의 선택에 따라 UI를 결정한다.
+            //버튼의 선택에 따라 UI를 결정한다. -> 탭바 아이템은 상태에 따라 버튼 색을 변경하는 메서드가 없었다.
             if item.isSelected { item.backgroundColor = .magenta }
             else { item.backgroundColor = .clear }
         }
@@ -193,7 +195,6 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let nextVC = DetailViewController()
         let item = searchResultItems[indexPath.row]
         nextVC.data = item
-        nextVC.realmData = RealmManager.shared.getDataInRealm(productID: item.productID)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
@@ -216,6 +217,12 @@ extension SearchViewController: UISearchBarDelegate {
             self.updateData(result: result, pageEnd: pageEnd)
             self.view.hideToastActivity() //데이터가 로드 되면 로딩 토스트를 hide한다.
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            searchBar.showsCancelButton = false
+            return}
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

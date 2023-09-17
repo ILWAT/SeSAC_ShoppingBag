@@ -18,14 +18,16 @@ final class RealmManager{
             try realm = Realm()
             print(realm?.configuration.fileURL)
         } catch {
-            print("error")
+            print("error:", error)
         }
     }
     
     func readShoppingRealmData() -> Results<SearchShoppingRealmModel>? {
         guard let realm else {return nil}
-        return realm.objects(SearchShoppingRealmModel.self)
+        //추가한 순서대로 데이터베이스를 읽어들인다.
+        return realm.objects(SearchShoppingRealmModel.self).sorted(byKeyPath: "likedDate", ascending: false)
     }
+    
     
     ///데이터를 데이터베이스에 저장한다. 성공시 true를 반환하고 실패시 false를 반환한다.
     func insertShoppingRealmData(data: Item) -> Bool{
@@ -52,6 +54,7 @@ final class RealmManager{
                              value: ["_id": data._id, "like": isLiked],
                              update: .modified)
             })
+            
             return !isLiked
         } catch {
             print(error)
@@ -97,6 +100,10 @@ final class RealmManager{
         guard let realm else {return nil}
         let findData = realm.objects(SearchShoppingRealmModel.self).where { $0.title.contains(productName) }
         return findData
+    }
+    
+    func mappingShoppingItemModel(data: SearchShoppingRealmModel) -> Item{
+        return Item(title: data.title, link: data.link, image: data.image, lprice: data.lprice, hprice: data.hprice, mallName: data.mallName, productID: data.productID, productType: data.productType, brand: data.brand, maker: data.maker, category1: data.category1, category2: data.category2, category3: data.category3, category4: data.category4)
     }
     
     

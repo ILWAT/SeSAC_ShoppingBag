@@ -9,5 +9,5 @@ import Foundation
 
 extension URL{
     static let naverSearchShoppingURL = "https://openapi.naver.com/v1"
-    static let mobilString = "https://msearch.shopping.naver.com/product"
+    static let mobilString = "https://msearch.shopping.naver.com/product/"
 }

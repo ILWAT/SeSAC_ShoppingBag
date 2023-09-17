@@ -13,6 +13,7 @@ enum ToastType{
     case success
     case failureSaveDB
     case fianlPage
+    case noneText
 }
 
 extension ToastType{
@@ -26,6 +27,8 @@ extension ToastType{
             return "오류가 발생했습니다. 다시 시도해주세요."
         case .fianlPage:
             return "마지막 페이지입니다!"
+        case .noneText:
+            return "검색어를 입력해주세요."
         }
     }
 }

@@ -16,11 +16,11 @@ class DetailViewController: BaseViewController, WKUIDelegate{
     
     var data: Item!
     
-    var realmData: SearchShoppingRealmModel? = nil
+//    var realmData: SearchShoppingRealmModel?
     
-    lazy var isLiked: Bool = realmData?.like ?? false{
+    lazy var isLiked: Bool = false{
         didSet{
-            changeLikeButtonImage()
+            setLikeButtonImage()
         }
     }
    
@@ -32,34 +32,32 @@ class DetailViewController: BaseViewController, WKUIDelegate{
     }
     
     //MARK: - setUI
-    override func configure() {
-        //WebView 설정
-        let mobilString = EndPoint.mobileShoppingWebLink.getURL+"/\(data.productID)"
-        
-        guard let url = URL(string:mobilString) else {
-            makeToast(toastType: .networkError)
-            return
-        }
-        let urlRequest = URLRequest(url: url)
-        webView.load(urlRequest)
-        
-        //LikeButton 설정
-        isLiked = realmData?.like ?? false
-        changeLikeButtonImage()
+    override func configure(){
+        //웹뷰를 포함한 사용자에게 보여질 화면을 셋팅한다.
+        displayData()
     }
     
     override func setNavigation() {
-        self.title = realmData?.title
         self.navigationItem.setRightBarButton(UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(tappedLikeButton)), animated: true)
+        //LikeButton 설정
+        setLikeButtonImage()
     }
     
     //MARK: - Action
     
     @objc func tappedLikeButton(_ sender: UIBarButtonItem){
+        
         let originLike = isLiked
         
-        if let realmData {
-            isLiked = RealmManager.shared.changeShoppingRealmLikeData(data: realmData, isLiked: isLiked)
+        let realm = RealmManager.shared
+        
+        if realm.checkDataInRealm(productID: data.productID) {
+            guard let realmData = realm.getDataInRealm(productID: data.productID) else {
+                makeToast(toastType: .failureSaveDB)
+                return
+            }
+            
+            isLiked = !realm.removeShoppingRealmData(data: realmData) //데이터베이스를 바로 삭제한다. => 데이터베이스 성공시 true값 반환이므로, 좋아요 상태는 반대를 저장한다.
         } else {
             isLiked = RealmManager.shared.insertShoppingRealmData(data: data)
         }
@@ -76,12 +74,46 @@ class DetailViewController: BaseViewController, WKUIDelegate{
     
     //MARK: - Helper
     
-    func changeLikeButtonImage() {
+    func setLikeButtonImage() {
         guard let rightBarButton = self.navigationItem.rightBarButtonItem else {return}
         if isLiked {
             rightBarButton.image = UIImage(systemName: "heart.fill")
         } else {
             rightBarButton.image = UIImage(systemName: "heart")
         }
+    }
+    
+    func displayData() {
+        if let data = data {
+            self.title = data.title.removeSearchKeywordPoint()
+            setWebView(query: data.productID)
+            isLiked = RealmManager.shared.checkDataInRealm(productID: data.productID)
+        } else {
+            makeToast(toastType: .networkError)
+            self.navigationController?.popViewController(animated: true)
+            return
+        }
+    }
+    
+    func setWebView(query: String?){
+        //WebView 설정
+        var mobileString = EndPoint.mobileShoppingWebLink.getURL
+        
+        guard let query = query?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            makeToast(toastType: .networkError)
+            self.navigationController?.popViewController(animated: true)
+            return
+        }
+        
+        mobileString += query
+        print(mobileString)
+        
+        guard let url = URL(string:mobileString) else {
+            makeToast(toastType: .networkError)
+            return
+        }
+        
+        let urlRequest = URLRequest(url: url)
+        webView.load(urlRequest)
     }
 }
