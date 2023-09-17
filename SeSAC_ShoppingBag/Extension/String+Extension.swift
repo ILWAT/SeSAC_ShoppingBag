@@ -14,7 +14,10 @@ extension String{
         return removelast
     }
     
-//    func addPriceUnit() -> String {
-//        let countUnit = self.count / 3
-//    }
+    func addPriceUnit() -> String {
+        let format = NumberFormatter()
+        format.numberStyle = .decimal
+        guard let returnNumber = format.string(for: Int(self)) else {return "적용 오류"}
+        return "\(returnNumber)"
+    }
 }

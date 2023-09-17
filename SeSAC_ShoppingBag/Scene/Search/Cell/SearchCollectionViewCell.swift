@@ -106,7 +106,7 @@ class SearchCollectionViewCell: UICollectionViewCell{
     func setDisplayData(_ data: Item){
         productLabel.text = data.title.removeSearchKeywordPoint()
         brandLabel.text = "[\(data.mallName)]"
-        priceLabel.text = data.lprice
+        priceLabel.text = data.lprice.addPriceUnit()
         
         guard let imageURL = URL(string: data.image) else {return}
         productImageView.kf.setImage(with: imageURL)
@@ -131,7 +131,7 @@ class SearchCollectionViewCell: UICollectionViewCell{
     func setDisplayData(_ data: SearchShoppingRealmModel){
         productLabel.text = data.title.removeSearchKeywordPoint()
         brandLabel.text = "[\(data.mallName)]"
-        priceLabel.text = data.lprice
+        priceLabel.text = data.lprice.addPriceUnit()
         
         guard let imageURL = URL(string: data.image) else {return}
         productImageView.kf.setImage(with: imageURL)
