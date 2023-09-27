@@ -109,11 +109,25 @@ final class SearchViewController: BaseViewController {
             else { item.isSelected = false }
             
             //버튼의 선택에 따라 UI를 결정한다. -> 탭바 아이템은 상태에 따라 버튼 색을 변경하는 메서드가 없었다.
-            if item.isSelected { item.backgroundColor = .magenta }
-            else { item.backgroundColor = .clear }
+            if item.isSelected {
+                if #available(iOS 15.0, *){
+                    item.configuration?.baseForegroundColor = .white
+                } else {
+                    item.setTitleColor(.white, for: .normal)
+                }
+                item.backgroundColor = .systemGreen
+                
+            }
+            else {
+                if #available(iOS 15.0, *){
+                    item.configuration?.baseForegroundColor = .systemGray
+                } else {
+                    item.setTitleColor(.systemGray, for: .normal)
+                }
+                item.backgroundColor = .clear
+            }
         }
     }
-    
     
     
     //MARK: - Helper
