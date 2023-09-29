@@ -109,7 +109,8 @@ class SearchCollectionViewCell: UICollectionViewCell{
         priceLabel.text = data.lprice.addPriceUnit()
         
         guard let imageURL = URL(string: data.image) else {return}
-        productImageView.kf.setImage(with: imageURL)
+        productImageView.kf.setImageWithDownSampling(with: imageURL)
+//        productImageView.kf.setImage(with: imageURL)
         
         
         
@@ -134,6 +135,7 @@ class SearchCollectionViewCell: UICollectionViewCell{
         priceLabel.text = data.lprice.addPriceUnit()
         
         guard let imageURL = URL(string: data.image) else {return}
-        productImageView.kf.setImage(with: imageURL)
+        productImageView.kf.setImageWithDownSampling(with: imageURL)
+//        productImageView.kf.setImage(with: imageURL)
     }
 }

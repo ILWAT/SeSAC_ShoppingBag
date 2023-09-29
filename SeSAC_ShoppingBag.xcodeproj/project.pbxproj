@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE6C17F02B9EF121000D8334 /* Extension+KingfisherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6C17EF2B9EF121000D8334 /* Extension+KingfisherWrapper.swift */; };
 		DE8F49822AA99EFB0028C055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49812AA99EFB0028C055 /* AppDelegate.swift */; };
 		DE8F49842AA99EFB0028C055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49832AA99EFB0028C055 /* SceneDelegate.swift */; };
 		DE8F49862AA99EFB0028C055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F49852AA99EFB0028C055 /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE6C17EF2B9EF121000D8334 /* Extension+KingfisherWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+KingfisherWrapper.swift"; sourceTree = "<group>"; };
 		DE8F497E2AA99EFB0028C055 /* SeSAC_ShoppingBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_ShoppingBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8F49812AA99EFB0028C055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8F49832AA99EFB0028C055 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				DE8F49B02AA9A5980028C055 /* UIView+Extension.swift */,
 				DEA943392AAB5F0A002AB731 /* IdentifierProtocol.swift */,
 				DEC174E12AAE447B006C62F9 /* String+Extension.swift */,
+				DE6C17EF2B9EF121000D8334 /* Extension+KingfisherWrapper.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				DE8F49BA2AA9C1410028C055 /* SearchViewController.swift in Sources */,
 				DEC1755B2AAF1459006C62F9 /* SearchShoppingRealmModel.swift in Sources */,
 				DE8F49AF2AA9A5810028C055 /* UIViewController+Extension.swift in Sources */,
+				DE6C17F02B9EF121000D8334 /* Extension+KingfisherWrapper.swift in Sources */,
 				DEC174D82AACB38D006C62F9 /* Extension+URL.swift in Sources */,
 				DE8F49822AA99EFB0028C055 /* AppDelegate.swift in Sources */,
 				DE8F49842AA99EFB0028C055 /* SceneDelegate.swift in Sources */,
