@@ -1,4 +1,6 @@
-# SeSAC_ShoppingBag
+# ShoppingBag
+<p align="center"><img src="https://github.com/ILWAT/SeSAC_ShoppingBag/assets/87518434/ec0cc2f3-dac3-407d-93f0-1af97eda1dcb" width="20%"></img><img src="https://github.com/ILWAT/SeSAC_ShoppingBag/assets/87518434/0e117dd6-8813-4005-b0a4-0cb95cc3d387" width="20%"></img><img src="https://github.com/ILWAT/SeSAC_ShoppingBag/assets/87518434/7f1ebd80-afbf-4cd9-91a2-1e6a55794a83" width="20%"></img></p>
+
 **🛒나만의 인터넷 쇼핑백**  
 
 - 정렬 조건을 포함한 네이버 상품 검색 기능 제공
@@ -8,12 +10,12 @@
 ----------
 
 **📋핵심 기술**
-- `MVC`을 채택하여 Controller 내 네트워크 Response Model 관리 및 View 전달 및 User Event의 처리
-  - `네이버 검색 Rest API` + `UICollectionView`를 활용한 네이버 검색 Response Model을 View에 바인딩
-- `UICollectionViewDataSourcePrefetching protocol`을 활용한 네트워크 통신으로 인한 View Update 딜레이 최소화 목적의 `Pagination`
-- `Realm`을 활용한 사용자 좋아요 목록 저장 목적의 **로컬 DataBase Create, Delete, Select 연산**
-- `Kingfisher`를 통한 이미지 리소스 요청 및 **DownSampling**을 통한 메모리 관리
-- `if #avaliable`을 통한 OS 버전별 기능 분기 처리 및 deprecated 코드 전환을 통한 **안전성 향상**
+- `MVC`을 채택하여 네트워크 Response Model 관리 및 View 전달 및 User Event의 처리
+- 네이버 검색 `REST API`를 활용한 검색 결과 구현 및 `WKWebView`를 활용한 제품 상세정보 URL Present
+- `UICollectionViewDataSourcePrefetching`을 활용한  Pagination으로 scroll 끊김 현상 방지
+- `Repository Pattern`을 활용해 Realm CRUD 로직 구조화 및 상품 좋아요 동기화 처리
+- `Kingfisher`를 통한 이미지 리소스 요청 및 DownSampling을 통한 메모리 최적화
+- `#avaliable`을 통한 OS 버전별 deprecated 코드 분기를 통한 앱 안전성 향상
 - `extension` + `NumberFormatter`를 활용한 순자 단위 표기 구현
 
 
@@ -24,9 +26,9 @@
 > Minimum Deployment: iOS 13.0+
 ---------
 ***⚙️기술 스택***
-- **Framework**: `UIKit`, `PhotosUI`
-- **Design Pattern**: `MVC`, `Singleton`, `Delegate Pattern`
-- **Library**: `Alamofire`, `Kingfisher`, `RealmSwift`, `SnapKit`, `Toast`
+- **Framework**: `UIKit`
+- **Design Pattern**: `MVC`,`Repository Pattern`, `Delegate Pattern`, `Singleton`,
+- **Library**: `Alamofire`, `Kingfisher`, `SnapKit`, `Toast`, `Realm`
 
 
 
